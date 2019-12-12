@@ -20,6 +20,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
   useFindAndModify: false
 });
 
+mongoose.connect(MONGODB_URI);
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,"./public/index.html"))
 })
