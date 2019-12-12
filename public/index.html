@@ -1,38 +1,100 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <title>Workout Tracker!</title>
+    <meta charset="UTF-8">
+    <title>NoteTaker</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style media="screen">
+        body {
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+        
+        .primary {
+            color: #64edbd;
+        }
+        
+        h1 {
+            font-size: 40px;
+            color: white;
+        }
+        
+        h2,
+        h4 {
+            color: white;
+        }
+        
+        .delete {
+            margin-left: 20px;
+            color: red;
+            cursor: pointer;
+            text-align: right;
+        }
+        
+        input {
+            width: 400px;
+            height: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 42px;
+            background-color: antiquewhite;
+        }
+        
+        textarea {
+            width: 400px;
+            height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 24px;
+            background-color: antiquewhite;
+        }
+        
+        .data-title {
+            cursor: pointer;
+            font-size: 24px;
+        }
+        
+        #results {
+            width: 400px;
+            height: 200px;
+            overflow: auto;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: antiquewhite;
+        }
+        
+        #action-button {
+            display: inline-block;
+        }
+        
+        #buttons {
+            margin: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Workout Tracker!</h1>
+    <h1>Mongo Note App</h1>
+    <h2>Status: <span id="status" class="primary">Creating</span></h2>
+    <h4>Create a new note by submitting its title and content below</h4>
+    <h4>Click on a note to edit its title or content</h4>
+    <div id="user-input">
+        <p>Workout Title</p>
+        <input name="workoutTitle" type="text" id="workoutTitle" />
+        <br>
+        <p>Exercises</p>
+        <textarea name="exercises" id="exercises"></textarea>
+        <div id="buttons">
+            <div id="action-button">
+                <button id="make-new">Submit</button>
+            </div>
+            <button id="clear-all">Delete All Notes</button>
+        </div>
+    </div>
 
-    <form action="/submit" method="POST">
-        <input type="text" style="display: block; height: 36px; width: 200px; font-size: 24px;">
-        <textarea type="text" style="width: 200px; height: 200px;"></textarea>
-        <button>it doesn't work</button>
-    </form>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
+    <div id="results"></div>
+    <script src="app.js"></script>
 </body>
 
 </html>

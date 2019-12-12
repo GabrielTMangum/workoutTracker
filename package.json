@@ -1,25 +1,21 @@
 {
-  "name": "workouttracker",
+  "name": "mongo_crud",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GabrielTMangum/workoutTracker.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GabrielTMangum/workoutTracker/issues"
-  },
-  "homepage": "https://github.com/GabrielTMangum/workoutTracker#readme",
+  "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.16.4",
+    "mongodb": "^3.2.3",
+    "mongojs": "^2.6.0",
     "mongoose": "^5.8.0",
     "morgan": "^1.9.1"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
