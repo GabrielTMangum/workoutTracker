@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 const logger = require("morgan");
 const path = require("path");
 
+const PORT = process.env.PORT || 3000
+
 const app = express();
 
 app.use(logger("dev"));
@@ -119,6 +121,6 @@ app.get("/all", (req, res) => {
 //   });
 // });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("App running on port 3000!");
 });
